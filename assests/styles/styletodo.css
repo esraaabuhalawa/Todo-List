@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+:root,
+[data-bs-theme=dark] {
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --dark-Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --dark-Light-Grayish-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Dark-Grayish-Blue2: hsl(233, 14%, 35%);
+  --Dark-Grayish-Blue1: hsl(237, 14%, 26%);
+}
+
+:root,
+[data-bs-theme=light] {
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --light-Grayish-Blue1: hsl(236, 9%, 61%);
+  --light-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  --Bright-Blue: #3a7bfd;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/*********Main Styling ********/
+main h1 {
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  line-height: 1;
+  transform: scale(1.2);
+}
+main span {
+  color: var(--light-Grayish-Blue1);
+}
+main ul li p {
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 1.5;
+  vertical-align: bottom;
+  margin-top: 5px;
+}
+main ul li svg {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  margin-left: 10px;
+}
+
+.completed p {
+  text-decoration: line-through;
+  text-decoration-color: var(--Ligh-Grayish-Blue);
+  color: var(--Ligh-Grayish-Blue);
+}
+
+span,
+input[type=text] {
+  font-size: 15px;
+}
+
+/***End Of Main**/
+.form-check-input[type=checkbox] {
+  border-radius: 1.25em;
+  margin-top: 5px;
+}
+
+.form-check-input:checked {
+  /* background: linear-gradient(45deg, #57ddff , #c058f3);*/
+  background: hsl(280, 73%, 43%);
+  border: 1px solid hsl(280, 26%, 66%);
+}
+
+.selected {
+  color: var(--Bright-Blue);
+}
+
+.unbreakable {
+  word-wrap: break-word;
+}
+
+.todocontent {
+  overflow: hidden;
+}
+
+input[type=text] {
+  padding: 9px;
+  border: 1px solid var(--light-Grayish-Blue1);
+}
+
+.input-group-text {
+  border: 1px solid var(--light-Grayish-Blue1);
+}
+
+/******Animation*******/
+@keyframes listitem {
+  from {
+    /* Define the starting style */
+    font-size: 18px;
+  }
+  to {
+    /* Define the ending style */
+    font-size: 1.2rem;
+  }
+}
+/**Start Of Light Mode style*/
+[data-bs-theme=light] {
+  background-color: var(--Very-Light-Gray);
+  background-image: url("../images/bg-mobile-light.jpg");
+}
+[data-bs-theme=light] main h1 {
+  color: var(--Very-Light-Grayish-Blue);
+}
+[data-bs-theme=light] .list-group-item,
+[data-bs-theme=light] .form-control,
+[data-bs-theme=light] .input-group-text {
+  background: var(--Very-Light-Gray);
+}
+[data-bs-theme=light] .completed p {
+  color: var(--Dark-Grayish-Blue);
+  text-decoration-color: var(--Dark-Grayish-Blue);
+}
+[data-bs-theme=light] ul li input[type=text] {
+  color: var(--Ligh-Grayish-Blue);
+}
+
+/**Start Of Dark Mode style*/
+[data-bs-theme=dark] {
+  background-color: var(--Very-Dark-Blue);
+  background-image: url("../images/bg-mobile-dark.jpg");
+}
+[data-bs-theme=dark] main h1 {
+  color: var(--Light-Grayish-Blue);
+}
+[data-bs-theme=dark] main .list-group-item,
+[data-bs-theme=dark] main .form-control,
+[data-bs-theme=dark] main .input-group-text {
+  background: var(--Very-Dark-Desaturated-Blue);
+}
+[data-bs-theme=dark] main .completed p {
+  color: var(--Dark-Grayish-Blue1);
+  text-decoration-color: var(--Very-Dark-Grayish-Blue);
+}
+[data-bs-theme=dark] main input::-moz-placeholder {
+  color: var(--dark-Light-Grayish-Blue);
+}
+[data-bs-theme=dark] main ul li p,
+[data-bs-theme=dark] main input::placeholder, [data-bs-theme=dark] main #new {
+  color: var(--dark-Light-Grayish-Blue);
+}
+
+/**Media Quires**/
+@media (min-width: 600px) {
+  ul li p:hover {
+    cursor: pointer;
+    animation-name: listitem;
+    animation-duration: 0.5s;
+  }
+  [data-bs-theme=light] {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
+  [data-bs-theme=light] main span:hover {
+    color: var(--light-Dark-Grayish-Blue);
+    cursor: pointer;
+  }
+  [data-bs-theme=dark] {
+    background-image: url("../images/bg-desktop-dark.jpg");
+  }
+  [data-bs-theme=dark] main span:hover {
+    color: var(--dark-Light-Grayish-hover);
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=styletodo.css.map */
